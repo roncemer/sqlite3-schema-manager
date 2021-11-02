@@ -17,9 +17,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 # Installation
 
 To install for Nativescript:
+```
   ns plugin add @nativescript-community/sqlite
   npm install sqlite3-schema-manager --save
-
+```
 
 # Usage
 
