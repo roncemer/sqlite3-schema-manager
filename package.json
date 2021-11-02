@@ -1,0 +1,25 @@
+{
+  "name": "sqlite3-schema-manager",
+  "version": "1.0.0",
+  "description": "Schema Manager for SQLite Databases",
+  "main": "sqlite3-schema-manager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roncemer/sqlite3-schema-manager.git"
+  },
+  "keywords": [
+    "SQLite",
+    "SQLite3",
+    "Schema",
+    "Migration"
+  ],
+  "author": "Ronald B. Cemer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roncemer/sqlite3-schema-manager/issues"
+  },
+  "homepage": "https://github.com/roncemer/sqlite3-schema-manager#readme"
+}
