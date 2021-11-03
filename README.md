@@ -28,7 +28,17 @@ To install for Nativescript:
 Example usage in Nativescript:
 
 import { openOrCreate } from "@nativescript-community/sqlite"
-import { updateSchemasForAllTables } from "roncemer/sqlite3-schema-manager"
+import { SQLite3SchemaManager } from "sqlite3-schema-manager"
+
+const debug = SQLite3SchemaManager.DEBUG_PROGRESS | SQLite3SchemaManager.DEBUG_SELECTS | SQLite3SchemaManager.DEBUG_UPDATES;
+
+try {
+  await updateDBSchema(debug);
+  if ((debug && SQLite3SchemaManager.DEBUG_PROGRESS) != 0) console.log('updateDBSchema() succeeded');
+} catch (ex) {
+  console.error(ex);
+  throw ex;
+}
 
 async function updateDBSchema(debug) {
   let tbldefs = [
@@ -109,7 +119,7 @@ async function updateDBSchema(debug) {
   ];
 
   const db = openOrCreate("com.example.example-data.db");
-  await db.transaction(() => updateSchemasForAllTables(
+  await db.transaction(() => SQLite3SchemaManager.updateSchemasForAllTables(
     tbldefs,
     function(sql) { // select
       return db.select(sql);
@@ -119,18 +129,6 @@ async function updateDBSchema(debug) {
     },
     debug
   ));
-  if (debug) console.log('db.transaction() returned successfully');
+  if ((debug && SQLite3SchemaManager.DEBUG_PROGRESS) != 0) console.log('db.transaction() returned successfully');
 } // updateDBSchema()
-
-
-
-const debug = true;
-
-try {
-  await updateDBSchema(debug);
-  if (debug) console.log('updateDBSchema() succeeded');
-} catch (ex) {
-  console.error(ex);
-  throw ex;
-}
 ```

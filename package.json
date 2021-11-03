@@ -1,6 +1,6 @@
 {
   "name": "sqlite3-schema-manager",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Schema Manager for SQLite Databases",
   "main": "sqlite3-schema-manager.js",
   "scripts": {
