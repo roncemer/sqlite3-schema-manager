@@ -16,6 +16,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # Installation
 
+To install for React Native:
+```
+  yarn add react-native-sqlite-storage
+  yarn add sqlite3-schema-manager
+```
+
 To install for Nativescript:
 ```
   ns plugin add @nativescript-community/sqlite
